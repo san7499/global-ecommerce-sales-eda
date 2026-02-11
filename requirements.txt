@@ -1,7 +1,6 @@
-flask
-numpy
+Flask
 pandas
-matplotlib
-seaborn
-jupyter
+numpy
 markdown
+openpyxl
+gunicorn
