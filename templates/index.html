@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Global E-Commerce Sales Analytics</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- GitHub Markdown Style -->
+    <link href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f7fa;
+        }
+
+        .section-title {
+            margin-top: 60px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .card {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Chart Card Container */
+        .chart-box {
+            height: 380px;
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* Chart Image */
+        .chart-box img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain; /* prevents cropping */
+        }
+
+        iframe {
+            width: 100%;
+            height: 650px;
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+        }
+
+        .btn {
+            min-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-5 mb-5">
+
+    <!-- TITLE -->
+    <h1 class="text-center mb-4 fw-bold">
+        📊 Global E-Commerce Sales & Marketing Analytics
+    </h1>
+
+    <!-- README SECTION -->
+    <div class="card mb-5">
+        <div class="card-header bg-dark text-white">
+            📌 Project Overview
+        </div>
+        <div class="card-body markdown-body">
+            {{ readme|safe }}
+        </div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="text-center mb-5">
+
+        <a href="{{ url_for('static', filename='2-orders-data.xlsx') }}"
+           class="btn btn-success m-2"
+           download>
+           📂 Download Dataset
+        </a>
+
+        <a href="{{ url_for('static', filename='EDA_Ecommerce.html') }}"
+           class="btn btn-primary m-2"
+           target="_blank">
+           📓 Open Notebook in New Tab
+        </a>
+
+        <a href="https://github.com/san7499/global-ecommerce-sales-eda"
+           target="_blank"
+           class="btn btn-dark m-2">
+           🔗 View GitHub Repository
+        </a>
+    </div>
+
+    <!-- DATASET PREVIEW -->
+    <h3 class="section-title">📊 Dataset Preview</h3>
+
+    <div class="table-responsive">
+        {{ table|safe }}
+    </div>
+
+    <!-- VISUAL INSIGHTS -->
+    <h3 class="section-title">📈 Visual Insights</h3>
+
+    <div class="row">
+
+        <div class="col-md-6 mb-4">
+            <h6 class="text-center mb-3">Monthly Revenue Trend</h6>
+            <div class="chart-box">
+                <img src="{{ url_for('static', filename='Monthly Revenue Trend.png') }}">
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <h6 class="text-center mb-3">Monthly Sales Trend</h6>
+            <div class="chart-box">
+                <img src="{{ url_for('static', filename='Monthly Sales Trend.png') }}">
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <h6 class="text-center mb-3">Revenue by Country</h6>
+            <div class="chart-box">
+                <img src="{{ url_for('static', filename='Revenue by Country.png') }}">
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <h6 class="text-center mb-3">Top 10 Countries by Revenue</h6>
+            <div class="chart-box">
+                <img src="{{ url_for('static', filename='Top 10 Countries by Revenue.png') }}">
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <h6 class="text-center mb-3">Top 5 Products by Revenue</h6>
+            <div class="chart-box">
+                <img src="{{ url_for('static', filename='Top 5 Products by Revenue.png') }}">
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <h6 class="text-center mb-3">Marketing Channel Contribution</h6>
+            <div class="chart-box">
+                <img src="{{ url_for('static', filename='Revenue Contribution by Marketing Channel.png') }}">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- EMBEDDED NOTEBOOK -->
+    <h3 class="section-title">📓 Full Jupyter Notebook Preview</h3>
+
+    <iframe src="{{ url_for('static', filename='EDA_Ecommerce.html') }}"></iframe>
+
+</div>
+
+</body>
+</html>

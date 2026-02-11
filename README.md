@@ -152,5 +152,10 @@ E-Commerce-Sales-Eda/
 ## 👨‍💻 Author
 
 **Sanket Khapake**  
+<<<<<<< HEAD
 Data Analytics Enthusiast  
 Experienced in Exploratory Data Analysis (EDA), Data Cleaning, Visualization, and Statistical Analysis using Python
+=======
+Aspiring Data Scientist  
+Skilled in Python, Data Analytics, Machine Learning , SQL, Power BI
+
